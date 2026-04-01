@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>QuickCart</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>🛒 QuickCart</h1>
-  </header>
+<header>
+  <h2>QuickCart 🛒</h2>
+  <input type="text" id="search" placeholder="Search products...">
+  <button onclick="goToCart()">Cart (<span id="cart-count">0</span>)</button>
+</header>
 
-  <div id="product-list" class="grid"></div>
+<nav>
+  <button onclick="filterCategory('all')">All</button>
+  <button onclick="filterCategory('electronics')">Electronics</button>
+  <button onclick="filterCategory('clothes')">Clothes</button>
+</nav>
 
-  <script src="script.js"></script>
+<div id="products"></div>
+
+<div id="cart-page" class="hidden">
+  <h2>Your Cart</h2>
+  <div id="cart-items"></div>
+  <h3 id="total"></h3>
+  <button onclick="goHome()">Back</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
